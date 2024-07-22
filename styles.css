@@ -4,7 +4,7 @@
     --secondary-color: #b7d1d3;
     --accent-color: #07ffde;
     --text-color: #4a4a4a;
-    --background-color: #cedfdf; /* Aesthetic background color */
+    --background-color: #d4ebeb; /* Aesthetic background color */
     --link-color: #8fb8ca;
   }
   
@@ -82,7 +82,7 @@
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     margin-bottom: 50px;
-    transition: 3s;
+    transition:width 2s;
   }
   
   .hero-section .text h1 {
@@ -276,8 +276,8 @@
   #scrollTopBtn {
     display: none;
     position: fixed;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     bottom: 20px;
     left: 20px;
     z-index: 99;
