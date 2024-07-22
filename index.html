@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Portfolio</title>
+</head>
+<body>
+  
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="left">
+      
+      <a href="/">YR</a>    
+    </div>
+
+    <div class="right">
+      <a href="https://www.behance.net/yashrajbhandari1" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-behance"></i>
+        <span>Behance</span>
+      </a>
+      
+      <a href="https://www.facebook.com/yash.rajbhandari.16/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-facebook"></i>
+        <span>facebook</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/yash-rajbhandari-271520148/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>Linkedin</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- SECTION 1: Hero -->
+    <section class="hero-section">
+      <div class="text">
+        <h1>Hi, I'm Yash 👋 </h1>
+        <p>Welcome to my portfolio. I am passionate about design and constantly seek out new techniques and trends to stay ahead in the industry.</p>
+
+        <div class="links">
+          <a href="#about">
+            <i class="fa-solid fa-user"></i>
+            <span>About Me</span>
+          </a>
+          
+          <a href="#projects">
+            <i class="fa-solid fa-folder"></i>
+            <span>Projects</span>
+          </a>
+          
+          <a href="#contact">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: About Me -->
+    <section id="about" class="about-section">
+      <h2>About Me</h2>
+      <div class="content">
+        <div class="image">
+          <img src="ssss.jpg" alt="About Me Image">
+        </div>
+        <div class="text">
+          <p>I am passionate about creating intuitive and aesthetically pleasing digital experience with a knack for crafting user-friendly and visually appealing websites.</p>
+          <br>
+          <p> Alongside my formal training of Web desiging, I possess practical knowledge of HTML and CSS, enabling me to seamlessly bridge the gap between design and development. I am keen to leverage my skills and enthusiasm to contribute to innovative projects and collaborate with cross-functional teams, aiming to enhance user satisfaction and engagement.
+
+
+
+
+
+
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Projects -->
+    <section id="projects" class="projects-section">
+      <h2>Projects</h2>
+
+      <div class="projects-group">
+        <div class="project-card">
+          <img src="s.png" alt="Project 1">
+          <div class="project-details">
+            <h3>Hospital Website</h3>
+            <p>Developed an interactive prototype ensuring user-friendly designs </p>
+            <a href="https://www.figma.com/design/L5L05q16MlN7uHi9hbeae4/Hospital-Website?node-id=1-451&t=F22vOVMBWPlPFelu-1" target="_blank" class="cta-btn">View Project</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="ss.png" alt="Project 2">
+          <div class="project-details">
+            <h3>Food Delivery Mobile App</h3>
+            <p>Designed a comprehensive and user-friendly mobile food delivery app prototype.</p>
+            <a href="https://www.figma.com/design/m5jv81nP9AE0I0AjBrxOJP/Food-delivery-mobile-app-design?node-id=2-2&t=SGjpeujdaMWIe5A6-1" target="_blank" class="cta-btn">View Project</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="sss.jpg" alt="Project 3">
+          <div class="project-details">
+            <h3>Upcoming Projects</h3>
+            <p>Will be updated soon. Stay Tune</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Contact -->
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+
+      <div class="group">
+        <div class="text">
+          <p>Have a question or want to work together? Feel free to reach out using the form below or connect with me on Behance or Linkedin.</p>
+        </div>
+
+        <form
+         action="https://formspree.io/f/xnnajark"
+         method="POST"
+         > 
+          <label for="name">Name</label>
+          <input name="text" id="name">
+
+          <label for="email">Email</label>
+          <input name="email" id="email">
+
+          <label for="message">Message</label>
+          <textarea name="message" cols="30" rows="10"></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Yash Rajbhandari. All rights reserved.</p>
+  </footer>
+  <script>
+    // Scroll to Top Button
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 10) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+
+    scrollTopBtn.onclick = function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+
+    // Bouncy Effect on Hero Section
+    window.onload = function() {
+      const heroText = document.querySelector('.hero-section .text');
+      heroText.classList.add('bouncy');
+    };
+    
+  </script>
+  <script>
+window.embeddedChatbotConfig = {
+chatbotId: "8JK01ZOx0OaWA97ew8Qzi",
+domain: "www.chatbase.co"
+}
+</script>
+<script
+src="https://www.chatbase.co/embed.min.js"
+chatbotId="8JK01ZOx0OaWA97ew8Qzi"
+domain="www.chatbase.co"
+defer>
+</script>
+</body>
+</html>
