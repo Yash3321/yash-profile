@@ -78,14 +78,7 @@
         <div class="text">
           <p>I am passionate about creating intuitive and aesthetically pleasing digital experience with a knack for crafting user-friendly and visually appealing websites.</p>
           <br>
-          <p> Alongside my formal training of Web desiging, I possess practical knowledge of HTML and CSS, enabling me to seamlessly bridge the gap between design and development. I am keen to leverage my skills and enthusiasm to contribute to innovative projects and collaborate with cross-functional teams, aiming to enhance user satisfaction and engagement.
-
-
-
-
-
-
-          </p>
+          <p> Alongside my formal training of Web desiging, I possess practical knowledge of HTML and CSS, enabling me to seamlessly bridge the gap between design and development. I am keen to leverage my skills and enthusiasm to contribute to innovative projects and collaborate with cross-functional teams, aiming to enhance user satisfaction and engagement.</p>
         </div>
       </div>
     </section>
@@ -132,19 +125,16 @@
           <p>Have a question or want to work together? Feel free to reach out using the form below or connect with me on Behance or Linkedin.</p>
         </div>
 
-        <form
-         action="https://formspree.io/f/xnnajark"
-         method="POST"
-         > 
-          <label for="name">Name</label>
-          <input name="text" id="name">
-
-          <label for="email">Email</label>
-          <input name="email" id="email">
-
-          <label for="message">Message</label>
-          <textarea name="message" cols="30" rows="10"></textarea>
-
+        <form action="https://formspree.io/f/xnnajark" method="POST">
+          <label for="name">Name<span style="color: red">*</span></label>
+          <input name="text" id="name" required>
+        
+          <label for="email">Email<span style="color: red">*</span></label>
+          <input name="email" id="email" type="email" required>
+        
+          <label for="message">Message<span style="color: red">*</span></label>
+          <textarea name="message" cols="30" rows="10" required></textarea>
+        
           <button type="submit">Send Message</button>
         </form>
       </div>
@@ -163,7 +153,8 @@
   <script>
     // Scroll to Top Button
     const scrollTopBtn = document.getElementById("scrollTopBtn");
-
+    const mainContent = document.querySelector("main");
+  
     window.onscroll = function() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 10) {
         scrollTopBtn.style.display = "block";
@@ -171,18 +162,37 @@
         scrollTopBtn.style.display = "none";
       }
     };
-
+  
     scrollTopBtn.onclick = function() {
+      // Scroll to top with smooth behavior
       window.scrollTo({top: 0, behavior: 'smooth'});
+  
+      // Add event listener to trigger bounce effect when the scroll ends
+      window.addEventListener('scroll', handleScrollToTop);
     };
-
-    // Bouncy Effect on Hero Section
+  
+    function handleScrollToTop() {
+      if (window.scrollY === 0) {
+        mainContent.classList.add('bounce');
+  
+        // Remove bouncy class after animation ends
+        mainContent.addEventListener('animationend', () => {
+          mainContent.classList.remove('bounce');
+        });
+  
+        // Remove the event listener to prevent multiple triggers
+        window.removeEventListener('scroll', handleScrollToTop);
+      }
+    }
+  
+    // Bouncy Effect on Hero Section and Contact Section
     window.onload = function() {
       const heroText = document.querySelector('.hero-section .text');
       heroText.classList.add('bouncy');
     };
     
   </script>
+  <!-- Chatbot -->
   <script>
 window.embeddedChatbotConfig = {
 chatbotId: "8JK01ZOx0OaWA97ew8Qzi",
