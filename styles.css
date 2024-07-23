@@ -272,13 +272,15 @@ a {
 }
 
 /* Scroll to Top Button */
+
+
 #scrollTopBtn {
   display: none;
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
   z-index: 99;
   border: none;
   outline: none;
@@ -287,14 +289,17 @@ a {
   cursor: pointer;
   padding: 10px;
   border-radius: 50px;
-  font-size: 100%;
+    font-size: 80%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 10s ease-out;
-  /* transition:all .20s; */
+  transition: 0.2s ease-out;
 }
 
 #scrollTopBtn:hover {
   background-color: var(--link-color);
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-4px);
 }
 
 /* Media Queries for Responsiveness */
@@ -370,6 +375,7 @@ animation: bounceIn 2s ease-in-out;
 .bounce {
 animation: bounce 1s ease;
 }
+
 
 @media (max-width: 600px) {
   .navbar {
