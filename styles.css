@@ -287,7 +287,10 @@ a {
   cursor: pointer;
   padding: 10px;
   border-radius: 50px;
+  font-size: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 10s ease-out;
+  /* transition:all .20s; */
 }
 
 #scrollTopBtn:hover {
@@ -332,6 +335,40 @@ a {
   #contact{
     scroll-margin: 40px;
   }
+}
+ /* Bouncy effects */
+
+@keyframes bounceIn {
+0% {
+  transform: scale(0.5);
+  opacity: 0;
+}
+70% {
+  transform: scale(1.2);
+  opacity: 1;
+}
+100% {
+  transform: scale(1);
+}
+}
+.bouncy {
+animation: bounceIn 2s ease-in-out;
+}
+
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% {
+  transform: translateY(0);
+}
+40% {
+  transform: translateY(-30px);
+}
+60% {
+  transform: translateY(-15px);
+}
+}
+
+.bounce {
+animation: bounce 1s ease;
 }
 
 @media (max-width: 600px) {
