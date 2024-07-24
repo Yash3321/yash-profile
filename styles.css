@@ -423,7 +423,7 @@ animation: bounce 1s ease;
   opacity: 0;
 }
 70% {
-  transform: scale(1.2);
+  transform: scale(1);
   opacity: 1;
 }
 100% {
@@ -447,7 +447,7 @@ animation: bounceIn 2s ease-in-out;
 }
 
 .bounce {
-animation: bounce 1s ease;
+animation: bounce 0.8s ease;
 }
 
 
