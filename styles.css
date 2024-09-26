@@ -1,11 +1,11 @@
 
 :root {
-  --primary-color: #a6c3ce;
-  --secondary-color: #b7d1d3;
-  --accent-color: #07ffde;
-  --text-color: #4a4a4a;
-  --background-color: #cedfdf; /* Aesthetic background color */
-  --link-color: #8fb8ca;
+  --primary-color: #f8c617;
+  --secondary-color: #252c37;
+  --accent-color: #ffd963;
+  --text-color: #ffffff;
+  --background-color: #313638; /* Aesthetic background color */
+  --link-color: #ffb017;
 }
 
 * {
@@ -48,7 +48,7 @@ a {
 }
 
 .navbar .left a {
-  color: #3f626b;
+  color: #f8c617;
   font-size: 50px;
   font-weight: 600;
   font-family: serif;
@@ -244,7 +244,7 @@ a {
 .contact-section .group form input,
 .contact-section .group form textarea {
   font-family: 'Poppins', sans-serif;
-  border: 2px solid #193948;
+  border: 2px solid #ffffff;
   background-color: transparent;
   padding: 10px;
   margin-bottom: 15px;
