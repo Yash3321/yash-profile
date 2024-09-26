@@ -5,7 +5,7 @@
   --accent-color: #ffd963;
   --text-color: #ffffff;
   --background-color: #313638; /* Aesthetic background color */
-  --link-color: #ffb017;
+  --link-color: #f8c617;
 }
 
 * {
@@ -257,7 +257,7 @@ a {
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
   color: #fff;
-  background-color: #91ac91;
+  background-color: #f8c617;
   border: none;
   height: 50px;
   cursor: pointer;
