@@ -1,11 +1,11 @@
 
 :root {
-  --primary-color: #f8c617;
+  --primary-color: #dcb220;
   --secondary-color: #252c37;
   --accent-color: #ffd963;
   --text-color: #ffffff;
   --background-color: #313638; /* Aesthetic background color */
-  --link-color: #f8c617;
+  --link-color: #e4b511;
 }
 
 * {
@@ -25,7 +25,11 @@ body {
   background-color: var(--background-color);
   max-width: 1400px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.8;
+}
+
+h3{
+  color: #252c37;
 }
 
 a {
@@ -48,7 +52,7 @@ a {
 }
 
 .navbar .left a {
-  color: #f8c617;
+  color: #e4b511;
   font-size: 50px;
   font-weight: 600;
   font-family: serif;
@@ -120,7 +124,7 @@ a {
 /* About Section */
 .about-section {
   padding: 50px 20px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .about-section h2 {
@@ -149,13 +153,27 @@ a {
 .about-section .content .text {
   text-align: justify;
   font-size: 1rem;
-  line-height: 1.82;
+  line-height: 1.8;
 }
 
 /* Projects Section */
+
+.projects-section .project-intro .text {
+  text-align: justify;
+}
+
+.project-intro {
+  text-align: justify; 
+  font-size: 1rem;
+  margin-bottom: 40px; 
+  line-height: 1.8; 
+  color: var(--text-color); 
+  margin-left: auto; 
+  margin-right: auto;
+}
 .projects-section {
   padding: 50px 20px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .projects-section h2 {
@@ -165,32 +183,47 @@ a {
 }
 
 .projects-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
 }
 
 .project-card {
+  flex: 0 1 30%;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 100%;
-  max-width: 300px;
+  overflow: hidden; 
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 .project-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
+  width: 100%; 
+  max-height: 250px; 
+  object-fit: fill; 
+  display: block; 
+  margin: 0 auto; 
+  position: relative;
+  z-index: 1; 
+}
+
+.project-details {
+  padding: 15px;
+  background: #ffffff; 
+  position: relative;
+  z-index: 2; 
+}
+
+.project-card:hover img {
+  transform: scale(1.4); 
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-1px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-details {
@@ -204,6 +237,80 @@ a {
 .project-details p {
   color: #777;
 }
+
+.project-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.project-card img {
+  width: 100%; 
+  height: auto; 
+  object-fit: fill;
+  
+}
+
+.project-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.project-details h3 {
+  font-size: 1.1rem;
+}
+
+.project-details p {
+  font-size: 0.8rem;
+  text-align: inherit;
+  color: #555;
+}
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* Full-width on mobile */
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* Carousel Items */
+.carousel {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Each Slide */
+.carousel-slide {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-around;
+  width: 100%; /* Each slide takes full width */
+  gap: 20px;
+}
+
+/* Carousel Buttons */
+.carousel-buttons-wrapper {
+  text-align: center;
+}
+
+.carousel-btn {
+  width: 20px;
+  height: 20px;
+  /* background: #ccc; */
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.carousel-btn.active {
+  background: var(--primary-color);
+}
+
 
 /* Contact Section */
 .contact-section {
@@ -244,7 +351,7 @@ a {
 .contact-section .group form input,
 .contact-section .group form textarea {
   font-family: 'Poppins', sans-serif;
-  border: 2px solid #ffffff;
+  border: 2px solid #e4b50f;
   background-color: transparent;
   padding: 10px;
   margin-bottom: 15px;
@@ -256,8 +363,8 @@ a {
 .contact-section .group form button {
   font-size: 16px;
   font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background-color: #f8c617;
+  color: #ffffff;
+  background-color: #252c37;
   border: none;
   height: 50px;
   cursor: pointer;
@@ -272,7 +379,6 @@ a {
 }
 
 /* Scroll to Top Button */
-
 
 #scrollTopBtn {
   display: none;
@@ -322,7 +428,7 @@ a {
   }
 
   .projects-group {
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     justify-content: center;
     
@@ -450,5 +556,22 @@ animation: bounceIn 2s ease-in-out;
 animation: bounce 0.8s ease;
 }
 
+/* Mobile View  */
+@media (max-width: 600px) {
+  .carousel-slide {
+    flex-direction: column; 
+    align-items: center;
+    gap: 20px; 
+  }
 
+  .project-card {
+    width: 90%; 
+    min-height: fit-content;
+    margin: 0 auto; 
+  }
+
+  .carousel-container {
+    padding: 10px; 
+  }
+}
 
