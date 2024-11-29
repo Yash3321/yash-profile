@@ -97,6 +97,7 @@ a {
 .hero-section .text p {
   font-size: 1rem;
   margin-bottom: 30px;
+  text-align: justify;
 }
 
 .hero-section .links {
@@ -332,7 +333,7 @@ a {
 }
 
 .contact-section .group .text {
-  text-align: center;
+  text-align: justify;
 }
 
 .contact-section .group form {
