@@ -274,7 +274,7 @@ a {
   position: relative;
   overflow: hidden;
   width: 100%; /* Full-width on mobile */
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
 }
