@@ -312,6 +312,11 @@ a {
   background: var(--primary-color);
 }
 
+.carousel {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+}
 
 /* Contact Section */
 .contact-section {
