@@ -121,7 +121,20 @@ a {
   filter: brightness(0.9);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
-
+/* Typewriter effect for the hero section */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  from, to { border-color: transparent }
+}
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink .75s step-end infinite;
+}
 /* About Section */
 .about-section {
   padding: 35px 20px;
