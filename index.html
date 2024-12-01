@@ -17,58 +17,54 @@
 </head>
 <body>
   
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="left">
-      
       <a href="/">YR</a>    
     </div>
-
     <div class="right">
-      <a href="https://www.behance.net/yashrajbhandari1" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-behance"></i>
-        <span>Behance</span>
+      <a href="https://www.behance.net/yashrajbhandari1" target="_blank">
+        <i class="fa-brands fa-behance"></i><span>Behance</span>
       </a>
-      
-      <a href="https://www.facebook.com/yash.rajbhandari.16/" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-facebook"></i>
-        <span>facebook</span>
+      <a href="https://www.facebook.com/yash.rajbhandari.16/" target="_blank">
+        <i class="fa-brands fa-facebook"></i><span>Facebook</span>
       </a>
-
-      <a href="https://www.linkedin.com/in/yash-rajbhandari-271520148/" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-linkedin"></i>
-        <span>Linkedin</span>
+      <a href="https://www.linkedin.com/in/yash-rajbhandari-271520148/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
       </a>
+      <button id="theme-toggle" class="theme-toggle">
+        <i id="theme-icon" class="fa-solid fa-sun"></i>
+      </button>
     </div>
   </nav>
+  
 
   <main>
    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="text">
-        
-    <h1 class="typewriter">Hi, I'm Yash 👋🏻 </h1>
-    
-        <p>Welcome to my portfolio. I am passionate about design and constantly seek out new techniques and trends to stay ahead in the industry.</p>
+   <section class="hero-section">
+    <div class="text">
+      
+  <h1 class="typewriter">Hi, I'm Yash 👋🏻 </h1>
+  
+      <p>Welcome to my portfolio. I am passionate about design and constantly seek out new techniques and trends to stay ahead in the industry.</p>
 
-        <div class="links">
-          <a href="#about">
-            <i class="fa-solid fa-user"></i>
-            <span>About Me</span>
-          </a>
-          
-          <a href="#projects">
-            <i class="fa-solid fa-folder"></i>
-            <span>Projects</span>
-          </a>
-          
-          <a href="#contact">
-            <i class="fa-solid fa-envelope"></i>
-            <span>Contact</span>
-          </a>
-        </div>
+      <div class="links">
+        <a href="#about">
+          <i class="fa-solid fa-user"></i>
+          <span>About Me</span>
+        </a>
+        
+        <a href="#projects">
+          <i class="fa-solid fa-folder"></i>
+          <span>Projects</span>
+        </a>
+        
+        <a href="#contact">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Contact</span>
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- About Me Section -->
     <section id="about" class="about-section">
@@ -375,19 +371,43 @@
   });
 </script>
 
+<!-- // Light and Dark Theme -->
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const userPreferredTheme = localStorage.getItem('theme') || 'dark';
+
+
+  document.documentElement.setAttribute('data-theme', userPreferredTheme);
+  themeIcon.className = userPreferredTheme === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    themeIcon.className = newTheme === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+
+    
+    localStorage.setItem('theme', newTheme);
+  });
+});
+
+</script>
   
   <!-- Chatbot -->
   <script>
-window.embeddedChatbotConfig = {
-chatbotId: "8JK01ZOx0OaWA97ew8Qzi",
-domain: "www.chatbase.co"
-}
-</script>
-<!-- <script
-src="https://www.chatbase.co/embed.min.js"
-chatbotId="8JK01ZOx0OaWA97ew8Qzi"
-domain="www.chatbase.co"
-defer>
-</script> -->
-</body>
-</html>
+    window.embeddedChatbotConfig = {
+    chatbotId: "8JK01ZOx0OaWA97ew8Qzi",
+    domain: "www.chatbase.co"
+    }
+    </script>
+    <!-- <script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="8JK01ZOx0OaWA97ew8Qzi"
+    domain="www.chatbase.co"
+    defer>
+    </script> -->
+    </body>
+    </html>
