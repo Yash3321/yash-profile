@@ -41,6 +41,7 @@ body {
   color: var(--link-color);
 }
 
+
 * {
   margin: 0;
   padding: 0;
@@ -62,6 +63,11 @@ a {
 }
 
 /* Navbar */
+.navbar, main, footer {
+  z-index: 1; /* Ensures they appear above particles */
+  position: relative; /* Required for z-index to work */
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -305,7 +311,6 @@ a {
   text-align: inherit;
   color: #555;
 }
-
 .project-details .cta-btn {
   display: inline-block;
   margin-top: 10px; 
@@ -323,6 +328,7 @@ a {
 .project-details .cta-btn:hover {
   background-color: var(--link-color); /* Hover effect */
 }
+
 /* Carousel Container */
 .carousel-container {
   position: relative;
@@ -366,11 +372,6 @@ a {
   background: var(--primary-color);
 }
 
-.carousel {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-  will-change: transform;
-}
 
 /* Contact Section */
 .contact-section {
@@ -462,7 +463,7 @@ a {
 }
 
 #scrollTopBtn:hover {
-  background-color: var(--link-color);
+  background-color: var(--link-hover-color);
 }
 
 #scrollTopBtn:hover {
@@ -635,4 +636,21 @@ animation: bounce 0.8s ease;
     padding: 10px; 
   }
 }
+
+/* .carousel {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+} */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: auto; /* Allow the canvas to detect user interactions */
+}
+
+
 
