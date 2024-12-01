@@ -4,8 +4,41 @@
   --secondary-color: #252c37;
   --accent-color: #ffd963;
   --text-color: #ffffff;
-  --background-color: #313638; /* Aesthetic background color */
+  --background-color: #313638;
   --link-color: #e4b511;
+  --link-hover-color: #dcb220;
+}
+
+[data-theme="light"] {
+  --primary-color: #dcb220;
+  --secondary-color: #f0f2f5;
+  --accent-color: #ffd963;
+  --text-color: #333333;
+  --background-color: #ffffff;
+  --link-color: #dcb220;
+  --link-hover-color:  #333333;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  max-width: 1400px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--link-color);
+  transition: color 0.3s;
+}
+
+.theme-toggle:hover {
+  color: var(--link-color);
 }
 
 * {
@@ -17,15 +50,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  max-width: 1400px;
-  margin: 0 auto;
-  line-height: 1.8;
 }
 
 h3{
