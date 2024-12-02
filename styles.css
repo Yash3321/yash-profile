@@ -1,656 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-:root {
-  --primary-color: #dcb220;
-  --secondary-color: #252c37;
-  --accent-color: #ffd963;
-  --text-color: #ffffff;
-  --background-color: #313638;
-  --link-color: #e4b511;
-  --link-hover-color: #dcb220;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-[data-theme="light"] {
-  --primary-color: #dcb220;
-  --secondary-color: #f0f2f5;
-  --accent-color: #ffd963;
-  --text-color: #333333;
-  --background-color: #ffffff;
-  --link-color: #dcb220;
-  --link-hover-color:  #333333;
-}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  max-width: 1400px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-
-.theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  color: var(--link-color);
-  transition: color 0.3s;
-}
-
-.theme-toggle:hover {
-  color: var(--link-color);
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /* transition: 3s; */
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-h3{
-  color: #252c37;
-}
-
-a {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-/* Navbar */
-.navbar, main, footer {
-  z-index: 1; /* Ensures they appear above particles */
-  position: relative; /* Required for z-index to work */
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
-  height: 80px;
-  position: sticky;
-  top: 0;
-  background: var(--secondary-color);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.navbar .left a {
-  color: #e4b511;
-  font-size: 50px;
-  font-weight: 600;
-  font-family: serif;
-}
-
-.navbar .right a {
-  color: var(--text-color);
-  margin: 0 10px;
-  position: relative;
-  display: inline-block;
-  transition: all 0.3s;
-}
-
-.navbar .right a:hover {
-  color: var(--link-color);
-}
-
-.navbar .right a span {
-  margin-left: 5px;
-}
-
-/* Hero Section */
-.hero-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 50px 20px;
-  background: var(--primary-color);
-  color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  margin-bottom: 50px;
-}
-
-.hero-section .text h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.hero-section .text p {
-  font-size: 1rem;
-  margin-bottom: 30px;
-  text-align: justify;
-}
-
-.hero-section .links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.hero-section .links a {
-  display: inline-block;
-  color: #4a4a4a;
-  background: #ffffff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: 600;
-  transition: 0.3s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.hero-section .links a:hover {
-  filter: brightness(0.9);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-/* Typewriter effect for the hero section */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-@keyframes blink {
-  from, to { border-color: transparent }
-}
-.typewriter {
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 0 auto;
-  animation: typing 3.5s steps(40, end), blink .75s step-end infinite;
-}
-/* About Section */
-.about-section {
-  padding: 35px 20px;
-  /* margin-bottom: 10px; */
-}
-
-.about-section h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.about-section .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-
-.about-section .content .image {
-  text-align: center;
-}
-
-.about-section .content .image img {
-  width: 100%;
-  /* max-width: 300px; */
-  border-radius: 10px;
-}
-
-.about-section .content .text {
-  text-align: justify;
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-/* Projects Section */
-
-.projects-section .project-intro .text {
-  text-align: justify;
-}
-
-.project-intro {
-  text-align: justify; 
-  font-size: 1rem;
-  margin-top: 20px; 
-  line-height: 1.8; 
-  color: var(--text-color); 
-  margin-left: auto; 
-  margin-right: auto;
-}
-.projects-section {
-  padding: 35px 20px;
-  /* margin-bottom: 10px; */
-}
-
-.projects-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.projects-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.project-card {
-  flex: 0 1 30%;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden; 
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-}
-
-.project-card img {
-  width: 100%; 
-  max-height: 250px; 
-  object-fit: fill; 
-  display: block; 
-  margin: 0 auto; 
-  position: relative;
-  z-index: 1; 
-}
-
-.project-details {
-  padding: 15px;
-  background: #ffffff; 
-  position: relative;
-  z-index: 2; 
-}
-
-.project-card:hover img {
-  transform: scale(1.4); 
-  transition: transform 0.5s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-1px); 
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.project-details {
-  padding: 15px;
-}
-
-.project-details h3 {
-  margin-bottom: 10px;
-}
-
-.project-details p {
-  color: #777;
-}
-
-.project-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.project-card img {
-  width: 100%; 
-  height: auto; 
-  object-fit: fill;
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <title>Portfolio</title>
+</head>
+<body>
   
-}
+  <nav class="navbar">
+    <div class="left">
+      <a href="/">YR</a>    
+    </div>
+    <div class="right">
+      <a href="https://www.behance.net/yashrajbhandari1" target="_blank">
+        <i class="fa-brands fa-behance"></i><span>Behance</span>
+      </a>
+      <a href="https://www.facebook.com/yash.rajbhandari.16/" target="_blank">
+        <i class="fa-brands fa-facebook"></i><span>Facebook</span>
+      </a>
+      <a href="https://www.linkedin.com/in/yash-rajbhandari-271520148/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+      </a>
+      <button id="theme-toggle" class="theme-toggle">
+        <i id="theme-icon" class="fa-solid fa-sun"></i>
+      </button>
+    </div>
+  </nav>
+  
 
-.project-details {
-  padding: 15px;
-  text-align: center;
-}
+  <main>
+   <!-- Hero Section -->
+   <section class="hero-section">
+    <div class="text">
+      
+  <h1 class="typewriter">Hi, I'm Yash 👋🏻 </h1>
+  
+      <p>Welcome to my portfolio. I am passionate about design and constantly seek out new techniques and trends to stay ahead in the industry.</p>
 
-.project-details h3 {
-  font-size: 1.1rem;
-}
+      <div class="links">
+        <a href="#about">
+          <i class="fa-solid fa-user"></i>
+          <span>About Me</span>
+        </a>
+        
+        <a href="#projects">
+          <i class="fa-solid fa-folder"></i>
+          <span>Projects</span>
+        </a>
+        
+        <a href="#contact">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-.project-details p {
-  font-size: 0.8rem;
-  text-align: inherit;
-  color: #555;
-}
-.project-details .cta-btn {
-  display: inline-block;
-  margin-top: 10px; 
-  margin-bottom: 10px;
-  padding: 8px 16px;
-  font-size: 12px;
-  color: white;
-  background-color: var(--primary-color);
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+      <h2>About Me</h2>
+      <div class="content">
+        <div class="image">
+          <img src="ssss.jpg" alt="About Me Image">
+        </div>
+        <div class="text">
+          <p>I am a creative and detail-oriented UI/UX Designer passionate about crafting user-centered designs that solve problems and enhance digital experiences. I have gained hands-on experience in wireframing, prototyping, and designing engaging interfaces for web and mobile platforms during my internship and formal training in UI/UX design.</p>
+          <br>
+          <p> Alongside my formal training and internship of Web desiging, I possess practical knowledge of HTML and CSS, enabling me to seamlessly bridge the gap between design and development. I specialize in designing intuitive interfaces for web and mobile platforms using software mainly Figma and I enjoy turning complex ideas into visually appealing and functional solutions.</p>
+        </div>
+      </div>
+    </section>
 
-.project-details .cta-btn:hover {
-  background-color: var(--link-color); /* Hover effect */
-}
+    <!-- Projects Section-->
+    <section id="projects" class="projects-section">
+      <h2>Projects</h2>
+      <div class="carousel-container">
+        <div class="carousel">
+          
+           <!-- Slide 1 -->
+           <div class="carousel-slide">
+            <div class="project-card">
+              <img src="Elite info tech.png" alt="Elite Info Tech">
+              <div class="project-details">
+                <h3>Elite Info Tech</h3>
+                <p>Developed a corporate landing page for an IT provider, emphasizing branding and showcasing technological expertise.</p>
+                <a href="https://www.figma.com/proto/AODgm4qm56LkfARzXYVOEf/Elite-Info-Tech?page-id=0%3A1&node-id=1-3&node-type=canvas&viewport=439%2C125%2C0.23&t=0AEuin9tZWCWBsYx-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3" target="_blank" class="cta-btn">View Project</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <img src="Easy .png" alt="Upcoming Project 4">
+              <div class="project-details">
+                <h3>Easy School</h3>
+                <p>Designed a school task tracker to streamline productivity, improve efficiency, and ensure smooth workflow adoption.</p>
+                <a href="https://www.figma.com/proto/C6HOJxTkXrxYxQXGBHVpjm/Easy-School-Landing-Page?page-id=0%3A1&node-id=95-503&node-type=canvas&viewport=-7818%2C1524%2C0.38&t=W7wDzLdTv9CRD6tm-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=95%3A503" target="_blank" class="cta-btn">View Project</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <img src="Calculator.png" alt="Upcoming Project 5">
+              <div class="project-details">
+                <h3>Elite Calculator </h3>
+                <p>Created a modern calculator landing page with a clean design and user-friendly intuitive interface features.</p>
+                <a href="https://www.figma.com/proto/yt2fKhIRnv16EfbrNjpDgp/Elite-Calculator-Landing-Page-2?page-id=0%3A1&node-id=3-424&node-type=frame&viewport=-1574%2C3%2C0.26&t=bbjcZ9IIhT57WSEe-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3%3A424" target="_blank" class="cta-btn">View Project</a>
+              </div>
+            </div>
+          </div>
 
-/* Carousel Container */
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%; /* Full-width on mobile */
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 10px;
-}
+          <!-- Slide 2 -->
+          <div class="carousel-slide">
+            <div class="project-card">
+              <img src="s 1.png" alt="Hospital Website">
+              <div class="project-details">
+                <h3>Hospital Website</h3>
+                <p>Developed an interactive prototype for hospitals, enhancing user-friendly navigation with accessibility-focused features.</p>
+                <a href="https://www.figma.com/proto/L5L05q16MlN7uHi9hbeae4/Hospital-Website?page-id=1%3A451&node-id=20-3&node-type=canvas&viewport=960%2C1626%2C0.14&t=GcrE9GeTELxGsILO-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=20%3A3" target="_blank" class="cta-btn">View Project</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <img src="mob.png" style="width: 280px;" alt="Food Delivery Mobile App">
+              <div class="project-details">
+                <h3>Food Delivery Mobile App</h3>
+                <p>Designed a comprehensive and user-friendly mobile food delivery app with prototype which integrates intuitive workflows.</p>
+                <a href="https://www.figma.com/proto/m5jv81nP9AE0I0AjBrxOJP/Food-delivery-mobile-app-design?page-id=2%3A2&node-id=12-36&node-type=canvas&viewport=6683%2C4505%2C0.24&t=P795DpScJSXnpgLV-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=12%3A36" target="_blank" class="cta-btn">View Project</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <img src="School Website.png" style="width: 320px;" alt="School Website">
+              <div class="project-details">
+                <h3>School Website</h3>
+                <p>Designed an interactive school website, focusing on resource access, user engagement, and intuitive navigation.</p>
+                <a href="https://www.figma.com/proto/XqxWHecRbIOVOcKb3B6UuM/School-website-landing-page?page-id=11%3A2&node-id=1479-1376&node-type=canvas&viewport=-25%2C1416%2C0.04&t=pLRJyhzfRcDhz7H0-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1479%3A1376" target="_blank" class="cta-btn">View Project</a>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Slide 3 -->
+          <div class="carousel-slide">
+            <div class="project-card">
+              <img src="Hami Chhimeki.png" style="width: 300px;" alt="Upcoming Project 3">
+              <div class="project-details">
+                <h3>Community Support Platform</h3>
+                <p>Developed a platform promoting local engagement with an intuitive interface and streamlined community usability features.</p>
+                <a href="https://www.figma.com/proto/rCcZp9v1XqxpFCjFjeHUvc/Hami-Chimeki?page-id=0%3A1&node-id=1-956&node-type=canvas&viewport=255%2C2272%2C0.19&t=7aI1115BMkkUwgbn-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A956" target="_blank" class="cta-btn">View Project</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <img src="Log.png" style="height: 248px;" alt="Upcoming Project 1">
+              <div class="project-details">
+                <h3>Login Page</h3>
+                <p>Designed a visually appealing login interface highlighting features and services with clear, user-friendly workflows.</p>
+                <a href="https://www.figma.com/proto/dd0yYI8hzFPibQkwlpyk8B/Login-page?page-id=0%3A1&node-id=3-71&node-type=frame&viewport=11%2C694%2C0.44&t=OPLcsasxFKkmrrPu-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=3%3A71" target="_blank" class="cta-btn">View Project</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <img src="Blog.png" alt="Upcoming Project 2">
+              <div class="project-details">
+                <h3>Blog Page</h3>
+                <p>Built a dynamic blogging platform emphasizing adaptive design, content curation, and seamless user engagement.</p>
+                <a href="https://www.figma.com/proto/X4HBSKnCnD27IMNz9J3I99/Blog-Page?page-id=0%3A1&node-id=401-16&node-type=canvas&viewport=583%2C-316%2C0.09&t=cl5o5fXB04UEkXH2-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=401%3A16" target="_blank" class="cta-btn">View Project</a>
+              </div>
+            </div>
+          </div>
 
-/* Carousel Items */
-.carousel {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-}
+        </div>
+      </div>
+      <!-- Carousel Navigation -->
+    <div class="carousel-buttons-wrapper">
+      <div class="carousel-buttons">
+        <button class="carousel-btn" data-slide="0"></button>
+        <button class="carousel-btn" data-slide="1"></button>
+        <button class="carousel-btn" data-slide="2"></button>
+      </div>
+    </div>
 
-/* Each Slide */
-.carousel-slide {
-  display: flex;
-  flex-shrink: 0;
-  justify-content: space-around;
-  width: 100%; /* Each slide takes full width */
-  gap: 20px;
-}
-
-/* Carousel Buttons */
-.carousel-buttons-wrapper {
-  text-align: center;
-}
-
-.carousel-btn {
-  width: 20px;
-  height: 20px;
-  /* background: #ccc; */
-  border-radius: 50%;
-  margin: 5px;
-  cursor: pointer;
-}
-
-.carousel-btn.active {
-  background: var(--primary-color);
-}
-
-
-/* Contact Section */
-.contact-section {
-  padding: 35px 20px;
-  margin-bottom: 20px;
-}
-
-.contact-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.contact-section .group {
-  display: flex;
-  margin-top: -10px; 
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.contact-section .group .text {
-  text-align: justify;
-}
-
-.contact-section .group form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
-}
-
-.contact-section .group form label {
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-.contact-section .group form input,
-.contact-section .group form textarea {
-  font-family: 'Poppins', sans-serif;
-  border: 2px solid #e4b50f;
-  background-color: transparent;
-  padding: 10px;
-  margin-bottom: 15px;
-  outline: none;
-  resize: none;
-  border-radius: 5px;
-}
-
-.contact-section .group form button {
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-  color: #ffffff;
-  background-color: #252c37;
-  border: none;
-  height: 50px;
-  cursor: pointer;
-  transition: .3s;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.contact-section .group form button:hover {
-  filter: brightness(.9);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Scroll to Top Button */
-
-#scrollTopBtn {
-  display: none;
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: var(--primary-color);
-  color: #ffffff;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50px;
-    font-size: 80%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: 0.2s ease-out;
-}
-
-#scrollTopBtn:hover {
-  background-color: var(--link-hover-color);
-}
-
-#scrollTopBtn:hover {
-  transform: translateY(-4px);
-}
-
-/* Media Queries for Responsiveness */
-@media (min-width: 768px) {
-  .hero-section {
-    flex-direction: row;
-    text-align: left;
-  }
-
-  .hero-section .links {
-    flex-direction: row;
-  }
-
-  .about-section .content {
-    flex-direction: row;
-  }
-
-  .projects-section {
-    text-align: center;
-  }
-
-  .projects-group {
-    /* display: flex; */
-    flex-direction: row;
-    justify-content: center;
+    <div class="project-intro">
+      <div class="text">
+      <p>My portfolio reflects a dynamic range of projects that showcase expertise gained through rigorous training and hands-on experience. During my internship, I advanced my skills by designing and improving interfaces for diverse platforms, such as corporate IT websites, Website landing pages and other different projects. Each project demonstrates my dedication to creating user-friendly, visually engaging designs that align with client goals and enhance digital experiences.</p>
+      <br>
+     <p>During my UI/UX training, I developed user-focused prototypes, including an accessible hospital website and a mobile food delivery app, emphasizing streamlined navigation and modern UX design principles.</p>
+    </p>  
+  </div>    
+  </div>    
+  
+  </section>
     
-  }
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div id="contact-particles"></div>
+      <div class="contact-content">
+        <h2>Contact</h2>
+    
+        <div class="group">
+          <div class="text">
+            <p>Have a question or want to work together? Feel free to reach out using the form below or connect with me on Behance or LinkedIn.</p>
+          </div>
+    
+          <form action="https://formspree.io/f/xnnajark" method="POST">
+            <label for="name">Name<span style="color: red">*</span></label>
+            <input name="text" id="name" required>
+    
+            <label for="email">Email<span style="color: red">*</span></label>
+            <input name="email" id="email" type="email" required>
+    
+            <label for="message">Message<span style="color: red">*</span></label>
+            <textarea name="message" cols="30" rows="10" required></textarea>
+    
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    
 
-  .contact-section .group {
-    flex-direction: column;
-  }
-  #about{
-    scroll-margin: 40px;
-  }
-  #projects{
-    scroll-margin: 40px;
-  }
-  #contact{
-    scroll-margin: 40px;
-  }
-}
- /* Bouncy effects */
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </main>
 
-@keyframes bounceIn {
-0% {
-  transform: scale(0.5);
-  opacity: 0;
-}
-70% {
-  transform: scale(1.2);
-  opacity: 1;
-}
-100% {
-  transform: scale(1);
-}
-}
-.bouncy {
-animation: bounceIn 2s ease-in-out;
-}
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Yash Rajbhandari. All rights reserved.</p>
+  </footer>
 
-@keyframes bounce {
-0%, 20%, 50%, 80%, 100% {
-  transform: translateY(0);
-}
-40% {
-  transform: translateY(-30px);
-}
-60% {
-  transform: translateY(-15px);
-}
-}
+  <!-- JS Section -->
+  <script>
+    // Scroll to Top Button
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    const mainContent = document.querySelector("main");
+  
+    window.onscroll = function() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 10) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+  
+    scrollTopBtn.onclick = function() {
+      // Scroll to top with smooth behavior
+      window.scrollTo({top: 0,left: 0, behavior: 'smooth'});
+  
+      // Bounce effect when the scroll ends
+      window.addEventListener('scroll', handleScrollToTop);
+    };
+  
+    function handleScrollToTop() {
+      if (window.scrollY === 0) {
+        mainContent.classList.add('bounce');
+  
+        // Remove bouncy class after animation ends
+        mainContent.addEventListener('animationend', () => {
+          mainContent.classList.remove('bounce');
+        });
+  
+        // Remove the event listener to prevent multiple triggers
+        window.removeEventListener('scroll', handleScrollToTop);
+      }
+    }
+  
+    // Bouncy Effect on Hero Section and Contact Section
+    window.onload = function() {
+      const heroText = document.querySelector('.hero-section .text');
+      heroText.classList.add('bouncy');
+    };
+    
+  </script>
 
-.bounce {
-animation: bounce 1s ease;
-}
+  <script>
+    const carousel = document.querySelector('.carousel');
+    const buttons = document.querySelectorAll('.carousel-btn');
+    let currentSlide = 0;
+  
+    function updateCarousel(index) {
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttons[index].classList.add('active');
+      currentSlide = index;
+    }
+  
+    // Auto-slide functionality
+    function startAutoSlide() {
+      return setInterval(() => {
+        const nextSlide = (currentSlide + 1) % buttons.length;
+        updateCarousel(nextSlide);
+      }, 4000); 
+    }
+  
+    let autoSlideInterval = startAutoSlide();
+  
+    // Add event listeners to buttons
+    buttons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        updateCarousel(index);
+        clearInterval(autoSlideInterval); // Stop auto-slide on manual interaction
+        autoSlideInterval = startAutoSlide(); // Restart auto-slide
+      });
+    });
+  
+    // Stop auto-slide on hover and restart on mouse leave
+    carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    carousel.addEventListener('mouseleave', () => autoSlideInterval = startAutoSlide());
+  
+    // Initialize the carousel
+    updateCarousel(0);
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const buttons = document.querySelectorAll('.carousel-btn');
+    let currentSlide = 0;
+    let startX = 0;
+    let currentTranslate = 0;
+    let previousTranslate = 0;
+    let isDragging = false;
+
+    // Function to move the carousel to the specified slide
+    const updateCarousel = (index) => {
+      currentSlide = index;
+      previousTranslate = -currentSlide * 100;
+      carousel.style.transform = `translateX(${previousTranslate}%)`;
+      buttons.forEach((btn, idx) => btn.classList.toggle('active', idx === currentSlide));
+    };
+
+    // Touch events for swipe functionality
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    });
+
+    carousel.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const currentX = e.touches[0].clientX;
+      const deltaX = currentX - startX;
+      currentTranslate = previousTranslate + deltaX / window.innerWidth * 100;
+      carousel.style.transform = `translateX(${currentTranslate}%)`;
+    });
+
+    carousel.addEventListener('touchend', () => {
+      isDragging = false;
+
+      const threshold = 25; // Percentage threshold for swipe detection
+      const deltaX = currentTranslate - previousTranslate;
+
+      if (deltaX < -threshold && currentSlide < slides.length - 1) {
+        updateCarousel(currentSlide + 1);
+      } else if (deltaX > threshold && currentSlide > 0) {
+        updateCarousel(currentSlide - 1);
+      } else {
+        updateCarousel(currentSlide);
+      }
+    });
+
+    // Add click event to navigation buttons
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        updateCarousel(index);
+      });
+    });
+
+    // Initialize the carousel
+    updateCarousel(0);
+  });
+</script>
+
+<!-- // Light and Dark Theme -->
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const userPreferredTheme = localStorage.getItem('theme') || 'dark';
+
+  document.documentElement.setAttribute('data-theme', userPreferredTheme);
+  themeIcon.className = userPreferredTheme === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    themeIcon.className = newTheme === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+
+    localStorage.setItem('theme', newTheme);
+  });
+});
 
 
-@media (max-width: 600px) {
-  .navbar {
-    padding: 0 20px;
-  }
-
-  .navbar .right a {
-    font-size: 22px;
-  }
-
-  .navbar .right a:last-child {
-    color: var(--text-color);
-    background-color: transparent;
-    padding: 0;
-  }
-
-  .navbar .right a span {
-    display: none;
-  }
-
-  .hero-section .text h1 {
-    font-size: 30px;
-  }
-
-  .about-section,
-  .projects-section,
-  .contact-section {
-    padding: 10px 20px;
-  }
-
-  #about{
-    scroll-margin: 90px;
-  }
-  #projects{
-    scroll-margin: 90px;
-  }
-  #contact{
-    scroll-margin: 90px;
-  }
-  /* Bouncy effects */
-}
-@keyframes bounceIn {
-0% {
-  transform: scale(0.5);
-  opacity: 0;
-}
-70% {
-  transform: scale(1);
-  opacity: 1;
-}
-100% {
-  transform: scale(1);
-}
-}
-.bouncy {
-animation: bounceIn 2s ease-in-out;
-}
-
-@keyframes bounce {
-0%, 20%, 50%, 80%, 100% {
-  transform: translateY(0);
-}
-40% {
-  transform: translateY(-30px);
-}
-60% {
-  transform: translateY(-15px);
-}
-}
-
-.bounce {
-animation: bounce 0.8s ease;
-}
-
-/* Mobile View  */
-@media (max-width: 600px) {
-  .carousel-slide {
-    flex-direction: column; 
-    align-items: center;
-    gap: 20px; 
-  }
-
-  .project-card {
-    width: 90%; 
-    min-height: fit-content;
-    margin: 0 auto; 
-  }
-
-  .carousel-container {
-    padding: 10px; 
-  }
-}
-
-/* .carousel {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-  will-change: transform;
-} */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  pointer-events: auto; /* Allow the canvas to detect user interactions */
-}
+</script>
 
 
+<div id="particles-js"></div>
 
+<!-- Screen Animation -->
+<script>
+  particlesJS("contact-particles", {
+    "particles": {
+      "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#dcb220" },
+      "shape": {
+        "type": "circle",
+        "stroke": { "width": 0, "color": "#000000" },
+        "polygon": { "nb_sides": 5 }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": { "enable": true, "speed": 0.2, "opacity_min": 0.3, "sync": true }
+      },
+      "size": {
+        "value": 2,
+        "random": true,
+        "anim": { "enable": true, "speed": 1, "size_min": 0.8, "sync": true }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#dcb220",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 1,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "grab" },
+        "onclick": { "enable": true, "mode": "push" },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 150,
+          "line_linked": { "opacity": 0.4 }
+        },
+        "bubble": {
+          "distance": 150,
+          "size": 8,
+          "duration": 1,
+          "opacity": 0.8,
+          "speed": 2
+        },
+        "repulse": { "distance": 100, "duration": 0.4 },
+        "push": { "particles_nb": 4 },
+        "remove": { "particles_nb": 2 }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+
+  <!-- Chatbot -->
+  <script>
+    window.embeddedChatbotConfig = {
+    chatbotId: "8JK01ZOx0OaWA97ew8Qzi",
+    domain: "www.chatbase.co"
+    }
+    </script>
+    <!-- <script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="8JK01ZOx0OaWA97ew8Qzi"
+    domain="www.chatbase.co"
+    defer>
+    </script> -->
+    </body>
+    </html>
