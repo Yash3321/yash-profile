@@ -13,8 +13,6 @@
 
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-
   <title>Portfolio</title>
 </head>
 <body>
@@ -76,7 +74,7 @@
           <img src="ssss.jpg" alt="About Me Image">
         </div>
         <div class="text">
-          <p>I am a creative and detail-oriented UI/UX Designer passionate about crafting user-centered designs that solve problems and enhance digital experiences. With hands-on experience gained during my internship and formal training in UI/UX design, I have gained hands-on experience in wireframing, prototyping, and designing engaging interfaces for web and mobile platforms.</p>
+          <p>I am a creative and detail-oriented UI/UX Designer passionate about crafting user-centered designs that solve problems and enhance digital experiences. I have gained hands-on experience in wireframing, prototyping, and designing engaging interfaces for web and mobile platforms during my internship and formal training in UI/UX design.</p>
           <br>
           <p> Alongside my formal training and internship of Web desiging, I possess practical knowledge of HTML and CSS, enabling me to seamlessly bridge the gap between design and development. I specialize in designing intuitive interfaces for web and mobile platforms using software mainly Figma and I enjoy turning complex ideas into visually appealing and functional solutions.</p>
         </div>
@@ -197,27 +195,31 @@
     
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
-      <h2>Contact</h2>
-
-      <div class="group">
-        <div class="text">
-          <p>Have a question or want to work together? Feel free to reach out using the form below or connect with me on Behance or Linkedin.</p>
+      <div id="contact-particles"></div>
+      <div class="contact-content">
+        <h2>Contact</h2>
+    
+        <div class="group">
+          <div class="text">
+            <p>Have a question or want to work together? Feel free to reach out using the form below or connect with me on Behance or LinkedIn.</p>
+          </div>
+    
+          <form action="https://formspree.io/f/xnnajark" method="POST">
+            <label for="name">Name<span style="color: red">*</span></label>
+            <input name="text" id="name" required>
+    
+            <label for="email">Email<span style="color: red">*</span></label>
+            <input name="email" id="email" type="email" required>
+    
+            <label for="message">Message<span style="color: red">*</span></label>
+            <textarea name="message" cols="30" rows="10" required></textarea>
+    
+            <button type="submit">Send Message</button>
+          </form>
         </div>
-
-        <form action="https://formspree.io/f/xnnajark" method="POST">
-          <label for="name">Name<span style="color: red">*</span></label>
-          <input name="text" id="name" required>
-        
-          <label for="email">Email<span style="color: red">*</span></label>
-          <input name="email" id="email" type="email" required>
-        
-          <label for="message">Message<span style="color: red">*</span></label>
-          <textarea name="message" cols="30" rows="10" required></textarea>
-        
-          <button type="submit">Send Message</button>
-        </form>
       </div>
     </section>
+    
 
     <!-- Scroll to Top Button -->
     <button id="scrollTopBtn" title="Go to top">
@@ -393,8 +395,6 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', newTheme);
   });
 });
-
-
 </script>
 
 
@@ -402,29 +402,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <!-- Screen Animation -->
 <script>
-  particlesJS("particles-js", {
+  particlesJS("contact-particles", {
     "particles": {
-      "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-      "color": { "value": "#dcb220" }, // Neutral color
+      "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#dcb220" },
       "shape": {
         "type": "circle",
         "stroke": { "width": 0, "color": "#000000" },
         "polygon": { "nb_sides": 5 }
       },
-      "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 0.5, "opacity_min": 0.2, "sync": false } },
-      "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.5, "sync": false } },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": { "enable": true, "speed": 0.2, "opacity_min": 0.3, "sync": true }
+      },
+      "size": {
+        "value": 2,
+        "random": true,
+        "anim": { "enable": true, "speed": 1, "size_min": 0.8, "sync": true }
+      },
       "line_linked": {
         "enable": true,
         "distance": 150,
         "color": "#dcb220",
-        "opacity": 0.3,
+        "opacity": 0.4,
         "width": 1
       },
       "move": {
         "enable": true,
-        "speed": 2,
+        "speed": 1,
         "direction": "none",
-        "random": true,
+        "random": false,
         "straight": false,
         "out_mode": "out",
         "bounce": false
@@ -433,41 +441,30 @@ document.addEventListener('DOMContentLoaded', () => {
     "interactivity": {
       "detect_on": "canvas",
       "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "grab" // Particles connect to the cursor when hovered
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "push" // Add more particles on click
-        },
-        "resize": true // Adjust particle positions when the window is resized
+        "onhover": { "enable": true, "mode": "grab" },
+        "onclick": { "enable": true, "mode": "push" },
+        "resize": true
       },
       "modes": {
         "grab": {
-          "distance": 200, // Distance within which particles connect to the cursor
-          "line_linked": { "opacity": 0.5 }
+          "distance": 150,
+          "line_linked": { "opacity": 0.4 }
         },
         "bubble": {
-          "distance": 150, // Particles grow and float when hovered
-          "size": 10,
+          "distance": 150,
+          "size": 8,
           "duration": 1,
           "opacity": 0.8,
-          "speed": 3
+          "speed": 2
         },
-        "repulse": {
-          "distance": 100, // Particles repel from the cursor
-          "duration": 0.4
-        },
-        "push": { "particles_nb": 4 }, // Number of particles added on click
-        "remove": { "particles_nb": 2 } // Number of particles removed on click
+        "repulse": { "distance": 100, "duration": 0.4 },
+        "push": { "particles_nb": 4 },
+        "remove": { "particles_nb": 2 }
       }
     },
     "retina_detect": true
   });
 </script>
-
-
 
   <!-- Chatbot -->
   <script>
